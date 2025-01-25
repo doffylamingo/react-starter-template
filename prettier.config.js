@@ -28,7 +28,10 @@ const config = {
   ],
   importOrderParserPlugins: ["typescript", "tsx", "jsx", "decorators-legacy"],
   importOrderTypeScriptVersion: "5.2.2",
-  plugins: ["@ianvs/prettier-plugin-sort-imports"],
+  plugins: [
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss",
+  ],
 };
 
 export default config;
