@@ -7,6 +7,8 @@ import { routeTree } from "./routeTree.gen";
 
 import "./index.css";
 
+import { ThemeProvider } from "./components/theme-provider";
+
 const queryClient = new QueryClient();
 
 const router = createRouter({
@@ -30,7 +32,12 @@ if (!rootElement.innerHTML) {
   root.render(
     <StrictMode>
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <ThemeProvider
+          defaultTheme="system"
+          storageKey="ui-theme"
+        >
+          <RouterProvider router={router} />
+        </ThemeProvider>
       </QueryClientProvider>
     </StrictMode>,
   );
